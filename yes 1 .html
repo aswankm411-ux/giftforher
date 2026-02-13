@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bakii gift is here</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #333;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .gift-box {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 35px 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.7rem;
+      color: #ff4b81;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      color: #555;
+    }
+
+    img {
+      width: 180px;
+      margin: 15px auto;
+      display: block;
+      border-radius: 15px;
+    }
+
+    /* MAIN BUTTON */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      padding: 18px 45px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(45deg, #ff4b81, #ff9a3c);
+      box-shadow: 0 10px 25px rgba(255, 75, 129, 0.5);
+      position: relative;
+      overflow: hidden;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Shine effect */
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+      );
+      animation: shine 3s infinite;
+    }
+
+    .btn:hover {
+      transform: scale(1.12) rotate(-1deg);
+      box-shadow: 0 15px 35px rgba(255, 75, 129, 0.7);
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 75, 129, 0.6);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 25px rgba(255, 75, 129, 0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Shine animation */
+    @keyframes shine {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      transform: rotate(-45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="gift-box">
+    <h1>eshwara.... yessoo...</h1>
+
+    <p>appo enne eshtannale... 🫣</p>
+
+    <img src="dance.gif" alt="Romantic Photo">
+
+    <p>ninak oru gift theraa 😘</p>
+
+    <a href="gift1.html" class="btn">
+      🎁 Open Gift 🎁
+    </a>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:20%; animation-duration: 6s;"></div>
+  <div class="heart" style="left:40%; animation-duration: 8s;"></div>
+  <div class="heart" style="left:60%; animation-duration: 5s;"></div>
+  <div class="heart" style="left:80%; animation-duration: 7s;"></div>
+
+</body>
+</html>

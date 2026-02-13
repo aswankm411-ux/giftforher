@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories 💖</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #333;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .center-box {
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #ff4b81;
+      margin-bottom: 25px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* MAIN PHOTO BUTTON */
+    .photo-btn {
+      display: inline-block;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(255, 75, 129, 0.5);
+      animation: pulseSway 4s infinite;
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+    }
+
+    .photo-btn img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-btn:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 30px 60px rgba(255, 75, 129, 0.7);
+    }
+
+    @keyframes pulseSway {
+      0%   { transform: scale(1) rotate(-1deg); }
+      25%  { transform: scale(1.03) rotate(1deg); }
+      50%  { transform: scale(1.05) rotate(-1deg); }
+      75%  { transform: scale(1.03) rotate(1deg); }
+      100% { transform: scale(1) rotate(-1deg); }
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #555;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      transform: rotate(-45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { top: 0; left: 10px; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-600px) rotate(-45deg); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="center-box">
+  <h1>Tap This 💕</h1>
+
+  <!-- MAIN PHOTO BUTTON -->
+  <a href="maingift.html" class="photo-btn">
+    <img src="cover.jpeg" alt="">
+  </a>
+
+  <div class="subtitle">
+    Click here… something beautiful is waiting for you  🫣💖
+  </div>
+</div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:15%; animation-duration: 6s;"></div>
+<div class="heart" style="left:35%; animation-duration: 8s;"></div>
+<div class="heart" style="left:55%; animation-duration: 5s;"></div>
+<div class="heart" style="left:75%; animation-duration: 7s;"></div>
+
+</body>
+</html>
+

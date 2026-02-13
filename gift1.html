@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bakii gift is here </title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #333;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #ff4b81;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .btn {
+      font-family: 'Poppins', sans-serif;
+      background: #ffb347; /* gradient alternative */
+      background: linear-gradient(to right, #ffb347, #ffcc33);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Optional floating hearts animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      transform: rotate(-45deg);
+      left: 50%;
+      animation: float 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { top: 0; left: 10px; }
+
+    @keyframes float {
+      0% { transform: translateX(0) translateY(0) rotate(-45deg); }
+      100% { transform: translateX(-100px) translateY(-600px) rotate(-45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-box">
+    
+    <h1>enne kalum veliya gift ninak kituvo shutuu.. </h1>
+        <p> nnalum gift theraa🌝</p>
+       <p> ethil nekk </p>
+   <a href="serikumgift.html" class="btn">
+      🎁 Open Gift 🎁
+    </a>
+    </div>
+  
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:20%; animation-duration: 6s;"></div>
+  <div class="heart" style="left:40%; animation-duration: 8s;"></div>
+  <div class="heart" style="left:60%; animation-duration: 5s;"></div>
+  <div class="heart" style="left:80%; animation-duration: 7s;"></div>
+</body>
+</html>

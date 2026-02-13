@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secret Entry 💖</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #333;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .lock-box {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 35px 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.6rem;
+      color: #ff4b81;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin: 15px 0;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      border: 2px solid #ffb3c7;
+      outline: none;
+      text-align: center;
+      margin-top: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    input:focus {
+      border-color: #ff4b81;
+      box-shadow: 0 0 10px rgba(255,75,129,0.4);
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 1.2rem;
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(45deg, #ff4b81, #ff9a3c);
+      box-shadow: 0 10px 25px rgba(255, 75, 129, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 35px rgba(255, 75, 129, 0.7);
+    }
+
+    .error {
+      margin-top: 10px;
+      color: #ff4b81;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      transform: rotate(-45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4b81;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { top: 0; left: 10px; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-600px) rotate(-45deg); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="lock-box">
+    <h1>to my  HEART 💕</h1>
+    <p>Type the magic word 🫣</p>
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter password..."
+      onkeydown="checkEnter(event)"
+    >
+
+    <button class="btn" onclick="checkPassword()">
+      Unlock 🔓
+    </button>
+
+    <div class="error" id="error">
+      ❌ Wrong word… try again
+    </div>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:20%; animation-duration: 6s;"></div>
+  <div class="heart" style="left:40%; animation-duration: 8s;"></div>
+  <div class="heart" style="left:60%; animation-duration: 5s;"></div>
+  <div class="heart" style="left:80%; animation-duration: 7s;"></div>
+
+  <script>
+    const correctPassword = "bhoomii"; // 👈 CHANGE THIS WORD
+    const nextPage = "lockedgift.html";    // 👈 CHANGE NEXT PAGE
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      if (input === correctPassword) {
+        window.location.href = nextPage;
+      } else {
+        error.style.display = "block";
+      }
+    }
+
+    function checkEnter(e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    }
+  </script>
+
+</body>
+</html>

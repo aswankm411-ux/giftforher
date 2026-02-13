@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Only For You 💖</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Main Box */
+.love-box {
+  background: rgba(255,255,255,0.88);
+  padding: 40px 35px;
+  border-radius: 35px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  animation: softAppear 2.5s ease;
+  z-index: 2;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff4b81;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 20px;
+  animation: textFade 3s ease;
+}
+
+/* Teddy */
+.teddy {
+  width: 150px;
+  animation: teddyDance 3s infinite ease-in-out;
+}
+
+/* Teddy gentle dance */
+@keyframes teddyDance {
+  0% { transform: rotate(-4deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(-8px); }
+  100% { transform: rotate(-4deg) translateY(0); }
+}
+
+/* Soft kisses */
+.kiss {
+  position: absolute;
+  font-size: 26px;
+  opacity: 0.8;
+  animation: kissFloat linear forwards;
+  pointer-events: none;
+}
+
+@keyframes kissFloat {
+  from {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-750px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 22px;
+  color: #ff4b81;
+  opacity: 0.5;
+  animation: heartFloat linear infinite;
+}
+
+@keyframes heartFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-700px); }
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Animations */
+@keyframes softAppear {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="love-box">
+  <h1>love you 😘</h1>
+  <p>You are my favorite feeling in this world 😘</p>
+  <img src="kiss.gif" class="teddy" alt="Dancing Teddy">
+</div>
+
+<!-- Romantic Music -->
+<audio id="music" autoplay loop>
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* Smooth music fade-in */
+const music = document.getElementById("music");
+music.volume = 0;
+let vol = 0;
+const fade = setInterval(() => {
+  if (vol < 0.6) {
+    vol += 0.01;
+    music.volume = vol;
+  } else {
+    clearInterval(fade);
+  }
+}, 200);
+
+/* Kisses */
+function createKiss() {
+  const kiss = document.createElement("div");
+  kiss.className = "kiss";
+  kiss.innerHTML = "💋";
+  kiss.style.left = Math.random() * 100 + "vw";
+  kiss.style.bottom = "-40px";
+  kiss.style.animationDuration = (4 + Math.random() * 3) + "s";
+  document.body.appendChild(kiss);
+  setTimeout(() => kiss.remove(), 7000);
+}
+
+/* Hearts */
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.bottom = "-40px";
+  heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}
+
+/* Sparkles */
+function createSparkle() {
+  const s = document.createElement("div");
+  s.className = "sparkle";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.top = Math.random() * 100 + "vh";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 3000);
+}
+
+/* Start effects */
+for (let i = 0; i < 30; i++) setTimeout(createKiss, i * 120);
+setInterval(createKiss, 900);
+setInterval(createHeart, 1500);
+setInterval(createSparkle, 400);
+</script>
+
+</body>
+</html>

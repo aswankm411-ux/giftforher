@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oru gift </title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, #ffd1dc 0%, #fff1a8 100%),
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      color: #e75480;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      font-family: 'Pacifico', cursive;
+    }
+
+    p {
+      color: #6b4c5a;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .romantic-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: #ff69b4;
+      margin-bottom: 1rem;
+    }
+
+    .gif-box {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .gif-box img {
+      width: 100%;
+      display: block;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ffb6c1, #ffe066);
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #5a2a3c;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 0.3rem;
+    }
+
+    /* Hover effect for No button */
+    button.no:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Yes button slightly bigger on hover or active */
+    button.yes:hover, button.yes:active {
+      transform: scale(1.1);
+    }
+
+    /* Image to appear after clicking Yes */
+    .hidden-img {
+      display: none;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 16px;
+    }
+    /* Heart animation */
+.heart {
+position: absolute;
+bottom: -50px;
+width: 30px;
+height: 30px;
+background: url('https://i.ibb.co/7kqG4kj/heart.png') no-repeat center/contain;
+animation-name: floatHeart;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+z-index: 1;
+}
+
+
+@keyframes floatHeart {
+0% { transform: translateY(0); opacity: 1; }
+100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- Hearts -->
+<div class="heart" style="left:20%; animation-duration: 6s;"></div>
+<div class="heart" style="left:40%; animation-duration: 8s;"></div>
+<div class="heart" style="left:60%; animation-duration: 5s;"></div>
+<div class="heart" style="left:80%; animation-duration: 7s;"></div>
+
+
+<div class="love">
+  </style>
+</head>
+  
+<body>
+  <div class="card">
+    <h1>Love letter for my shutttuu😍</h1>
+    <p style="font-family: 'Octavia Script', cursive; font-size: 18px;">
+  Eshtam thoranu parayuu shuttumaniii✨
+</p>
+
+    <div class="gif-box">
+       <img src="mygif.gif" alt="My GIF">
+    </div>
+
+    <p class="romantic-text">Do you love me..?? 🫣</p>
+  <a href="yes 1 .html">
+    <button>Yess 🙂‍↔️</button>
+    </a>
+      <a href="no1.html">
+    <button >Noo 🥱</button>
+</a>
+    <img id="love-img" class="hidden-img" src="https://i.ibb.co/3r3mV5x/romantic.jpg" alt="Romantic Image" />
+  </div>
+
+  <script>
+    function yesClicked() {
+      // Option 1: Go to another page
+      // window.location.href = 'https://example.com';
+
+      // Option 2: Stay on same page, show image and enlarge button
+      document.getElementById('love-img').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
